@@ -5,11 +5,13 @@ import DOMPurify from 'dompurify';
 
 import "./Coin.css";
 
+const {key} = require('../keys.js');
+
 const Coin = () => {
   const [coin, setCoin] = useState({});
 
   const params = useParams();
-  const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`;
+  const url = `${key.second}${params.coinId}`;
 
   useEffect(() => {
     axios
